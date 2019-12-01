@@ -99,7 +99,7 @@ $ cat /etc/passwd
 Linux man pages are organized into several sections, which are summarized in following table.
 
 | Section Number | Description     |
-| :------------- | :------------- |
+| :-------------: | :------------- |
 | 1 | Executable programs and shell commands |
 | 2 | System calls provided by the kernel |
 | 3 | Library calls provided by program libraries |
