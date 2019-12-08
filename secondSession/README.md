@@ -103,24 +103,27 @@ $ cat list0
 555-7929 Jones, Theresa
 555-9871 Orwell, Samuel
 
-$ tr BCJ bc < listing1.1.txt
+$ tr BCJ bc < list0
 555-2397 beckett, barry
 555-5116 carter, Gertrude
 555-7929 cones, Theresa
 555-9871 Orwell, Samuel
 ```
 
-**some usefull Commands**
+**some useful arguments**
 ```bash
 -t, --truncate-set1
       first truncate SET1 to length of SET2
 -d, --delete
       delete characters in SET1, do not translate
+-c, -C, --complement
+      use the complement of SET1
 ```
 
-**Question:** Convert all numbers into X
-**Question:** Lower-case all of the text
-**Question:** Upper-case all of the text
+**Question:** Convert all numbers into X\
+**Question:** Lower-case all of the text\
+**Question:** Upper-case all of the text\
+**Question:** Delete everything except numbers
 
 
 # File-Viewing Commands
@@ -142,4 +145,62 @@ $ tr BCJ bc < listing1.1.txt
 -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
       or use -n +NUM to output starting with line NUM
 
+```
+**Question:** use `head` and `tail` to show the first 10 lines and last 15 lines(use one of the files in `bigFiles` folder)\
+**Question:** use `head` and `tail` to display lines between 20 till 60
+
+# File-Summarizing Commands
+#### cut
+```bash
+$ echo "some text for test"|cut -d " " -f 1
+$ echo "some text for test"|cut -d " " -f 2
+$ echo "some text for test"|cut -d " " -f 5
+$ echo "some text for test"|cut -d " " -f 1-5
+$ echo "some text for test"|cut -d " " -f -5
+$ echo "some text for test"|cut -d " " -f 5-
+$ echo "some text for test"|cut -c 2
+$ echo "some text for test"|cut -c 3
+$ echo "some text for test"|cut -c 6
+$ echo "some text for test"|cut -c 2-10
+```
+
+#### wc
+```
+-c, --bytes            print the byte counts
+-m, --chars            print the character counts
+-l, --lines            print the newline counts
+-L, --max-line-length  print the maximum display width
+-w, --words            print the word counts
+```
+
+# Using Regular Expressions
+
+**First of all learn regex...**
+
+here are some usefull links:
+- [regexr.com](https://regexr.com)
+- [regex101.com](https://regex101.com)
+- [regex cheatsheet for js](https://dev.to/catherinecodes/a-regex-cheatsheet-for-all-those-regex-haters-and-lovers--2cj1)
+- [regex quick start](www.rexegg.com/regex-quickstart.html)
+
+#### grep
+
+```bash
+$ grep [options] regexp [files]
+```
+
+**some useful arguments:**
+```bash
+-c, --count               print only a count of selected lines per FILE
+-i, --ignore-case         ignore case distinctions
+-r, --recursive           like --directories=recurse
+-F, --fixed-strings       PATTERN is a set of newline-separated strings
+```
+<br>\
+**Describe these commands:**
+```bash
+$ grep -r eth0 /etc/*
+$ grep eth[01] /etc/*
+ps aux|grep -E python
+ps aux|grep -E "python|COMMAND"
 ```
